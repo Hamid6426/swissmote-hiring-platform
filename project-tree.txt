@@ -2,56 +2,121 @@ PROJECT: Swissmote (Hiring Platform)
 
 Techs: Next.js | React | Javascript | Tailwind CSS | MongoDB/Mongoose
 
-swissmote/
-├── public/                     # Static assets (images, icons, etc.)
-│   ├── images/                 # Profile pictures, logos, etc.
-│   └── favicon.ico             # Favicon for the website
+.
+├── public/                         # Static assets (images, icons)
+│   ├── images/
+│   └── favicon.ico
+│
 ├── src/
-│   ├── components/             # Reusable components
-│   │   ├── Navbar.js           # Navigation bar component
-│   │   ├── JobCard.js          # Displays individual job posting
-│   │   ├── AssignmentCard.js   # Displays assignment details
-│   │   ├── FileUpload.js       # Component for file upload
-│   │   ├── FeedbackForm.js     # Component for submitting feedback
-│   │   └── JobForm.js          # Form for posting new job
-│   ├── pages/                  # Next.js pages (using page router)
-│   │   ├── _app.js             # Custom App component
-│   │   ├── _document.js        # Custom Document component (for meta tags, etc.)
-│   │   ├── index.js            # Home page
-│   │   ├── job/                # Job-related pages
-│   │   │   ├── [id].js         # Job detail page (dynamic route based on job id)
-│   │   │   └── apply.js        # Apply for job page (assignment download and upload)
-│   │   ├── login.js            # Login page
-│   │   ├── register.js         # Register page
-│   │   ├── dashboard.js        # Dashboard for hiring users (manage jobs)
-│   │   ├── profile.js          # User profile page (view/edit)
-│   │   ├── feedback.js         # Feedback submission page
-│   │   └──404.js              # 404 Error page
-│   ├── context/                # Context API for state management (global state)
-│   │   └── UserContext.js      # Context for user authentication and details
-│   ├── lib/                    # Utilities and helper functions
-│   │   ├── db.js               # MongoDB connection logic
-│   │   ├── auth.js             # Authentication functions (OAuth, JWT)
-│   │   └── api.js              # Helper functions for handling API requests
-│   ├── models/                 # MongoDB models
-│   │   ├── User.js             # User model (candidates, hiring users)
-│   │   ├── Job.js              # Job model (job listings)
-│   │   ├── Assignment.js       # Assignment model (assignment data)
-│   │   └── Feedback.js         # Feedback model (feedback given to candidates)
-│   ├── styles/                 # Tailwind CSS configurations and global styles
-│   │   ├── globals.css         # Global styles (for base layout, typography, etc.)
-│   │   └── tailwind.config.js  # Tailwind CSS configuration
-│   ├── utils/                  # Utility functions (e.g., date formatting, validation)
-│   │   ├── validate.js         # Functions for input validation (email, file types)
-│   │   └── dateFormat.js       # Helper function for formatting dates
-│   └── hooks/                  # Custom React hooks
-│       ├── useAuth.js          # Hook for authentication logic
-│       ├── useJobs.js          # Hook for managing jobs (fetching, filtering)
-│       └── useFeedback.js      # Hook for handling feedback
-├── .env.local                  # Environment variables (DB connection string, API keys)
-├── .gitignore                  # Git ignore file (e.g., node_modules, build folder)
-├── package.json                # Project dependencies and scripts
-├── next.config.js              # Next.js configuration
-├── tailwind.config.js          # Tailwind configuration file
-├── postcss.config.js           # PostCSS configuration (required by Tailwind)
-└── README.md                   # Project overview and setup instructions
+│   ├── components/                         # Reusable components directory
+│   │   ├── Auth/                           # Authentication-related components
+│   │   │   ├── LoginForm.js                # Component for login form
+│   │   │   ├── RegisterForm.js             # Component for registration form
+│   │   │   ├── PasswordReset.js            # Component for password reset flow
+│   │   │   └── OAuthButtonGroup.js         # Social login buttons (Google, GitHub, etc.)
+│   │   │
+│   │   ├── Common/                         # Common components shared across the platform
+│   │   │   ├── Header.js                   # Header with navigation links
+│   │   │   ├── Footer.js                   # Footer for the application
+│   │   │   ├── Button.js                   # Custom Button component
+│   │   │   ├── Modal.js                    # Generic Modal component for dialogs
+│   │   │   ├── LoadingSpinner.js           # Loading spinner for async data loads
+│   │   │   ├── Notification.js             # Notifications and alerts component
+│   │   │   └── Breadcrumb.js               # Breadcrumb navigation for pages
+│   │   │
+│   │   ├── Dashboard/                      # Shared components for dashboards across user types
+│   │   │   ├── Sidebar.js                  # Sidebar navigation specific to each user type
+│   │   │   ├── DashboardHeader.js          # Common header for dashboard pages
+│   │   │   ├── OverviewStats.js            # Overview statistics widget (e.g., number of jobs, applications)
+│   │   │   ├── RecentActivity.js           # Recent activity log component
+│   │   │   └── UserProfileCard.js          # Profile card showing user information
+│   │   │
+│   │   ├── HumanResource/                             # Components specific to HR users
+│   │   │   ├── JobPostForm.js              # Form for creating or editing a job posting
+│   │   │   ├── CandidateList.js            # List of candidates for a specific job
+│   │   │   ├── CandidateCard.js            # Card displaying candidate info and actions
+│   │   │   ├── FeedbackForm.js             # Form for providing feedback on a candidate
+│   │   │   └── JobDetails.js               # Detailed view of a job posting
+│   │   │
+│   │   ├── JobSeeker/                      # Components specific to Job Seekers
+│   │   │   ├── JobList.js                  # List of available job postings
+│   │   │   ├── JobCard.js                  # Card displaying basic job info
+│   │   │   ├── ApplicationForm.js          # Form for applying to a job
+│   │   │   ├── ApplicationStatus.js        # Component showing application status
+│   │   │   └── JobDetailView.js            # Detailed view of a job, tailored for Job Seekers
+│   │   │
+│   │   └── Admin/                          # Components specific to Admin users
+│   │       ├── UserManagementTable.js      # Table for managing users (HR and Job Seekers)
+│   │       ├── UserDetails.js              # Detailed view of a single user
+│   │       ├── AdminDashboardMetrics.js    # Metrics and analytics for the admin dashboard
+│   │       ├── SystemLogs.js               # System logs and activity feed for admins
+│   │       └── RoleAssignmentForm.js       # Form for assigning or changing user roles
+│   │
+│   ├── layouts/                    # Layouts for different user types
+│   │   ├── GuestLayout.js          # Layout for public-facing pages
+│   │   ├── HRLayout.js             # Layout for HR dashboard
+│   │   ├── JobSeekerLayout.js      # Layout for Job Seeker dashboard
+│   │   └── AdminLayout.js          # Layout for Admin dashboard
+│   │
+│   ├── lib/                        # Libraries and utility functions
+│   │   ├── api.js                  # API call helpers
+│   │   ├── auth.js                 # Authentication helpers
+│   │   ├── constants.js            # Constants for roles, routes
+│   │   ├── utils.js                # General utility functions
+│   │   └── validators.js           # Input validation functions
+│   │
+│   ├── pages/                      # Page-based routing
+│   │   ├── api/                    # API routes (backend)
+│   │   ├── auth/                   # Authentication pages
+│   │   │   ├── login.js
+│   │   │   └── register.js
+│   │   ├── hr/                     # HR-specific pages
+│   │   │   ├── dashboard.js        # Main HR dashboard
+│   │   │   ├── jobs/               # HR job posting and management
+│   │   │   │   ├── index.js        # List jobs created by HR
+│   │   │   │   └── [id].js         # Job details and management
+│   │   │   └── candidates/         # Candidate management by HR
+│   │   │       ├── index.js        # List of candidates for HR
+│   │   │       └── [id].js         # Candidate details and feedback
+│   │   ├── job-seeker/             # Job Seeker-specific pages
+│   │   │   ├── dashboard.js        # Main Job Seeker dashboard
+│   │   │   ├── jobs/               # Job browsing and applications
+│   │   │   │   ├── index.js        # List all jobs available
+│   │   │   │   └── [id].js         # Job details and apply
+│   │   │   └── applications/       # Manage Job Seeker applications
+│   │   │       └── [id].js         # View specific application status
+│   │   ├── admin/                  # Admin-specific pages
+│   │   │   ├── dashboard.js        # Admin dashboard for overview
+│   │   │   └── users/              # Manage platform users
+│   │   │       ├── index.js        # List all users (HRs and Job Seekers)
+│   │   │       └── [id].js         # User details and management
+│   │   └── index.js                # Home page
+│   │
+│   ├── styles/                     # Styling files
+│   │   ├── globals.css             # Global styles
+│   │   ├── hr.css                  # HR-specific styles
+│   │   ├── jobSeeker.css           # Job Seeker-specific styles
+│   │   └── admin.css               # Admin-specific styles
+│   │
+│   ├── hooks/                      # Custom hooks
+│   │   ├── useAuth.js              # Authentication state
+│   │   ├── useUserRole.js          # Hook to get and check user role
+│   │   └── useNotification.js      # Hook for notifications
+│   │
+│   ├── context/                    # Context providers
+│   │   ├── AuthContext.js          # Authentication context
+│   │   └── NotificationContext.js  # Notification context
+│   │
+│   ├── middleware/                 # Middleware functions
+│   │   └── roleMiddleware.js       # Role-based redirection
+│   │
+│   └── config/                     # Configuration files
+│       ├── apiConfig.js            # API configuration which store api url
+│       ├── appConfig.js            # App-specific configuration like theme language
+│       └── firebaseConfig.js       # Firebase or third-party config
+│
+├── .env                            # Environment variables
+├── .gitignore                      # Git ignore file
+├── package.json                    # Dependencies and scripts
+├── README.md                       # Documentation
+└── next.config.js                  # Next.js configuration

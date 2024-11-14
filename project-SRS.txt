@@ -1,100 +1,156 @@
-1. Introduction
+1. INTRODUCTION
+===============
+
 1.1 Purpose
-This document outlines the software requirements for a Hiring Platform, which facilitates the interaction between hiring users (employers) and candidates (job seekers). The platform enables users to share job assignments, evaluate candidates' work, and provide feedback.
+-----------
+This document outlines the software requirements for a Hiring Platform, which facilitates interaction between hiring users (employers) and candidates (job seekers). The platform enables users to share job assignments, evaluate candidates' work, and provide feedback.
 
 1.2 Scope
+---------
 The platform will support the following core functionalities:
 
-Job posting with assignments by hiring users.
-Assignment download by candidates.
-Submission of completed assignments by candidates.
-Evaluation and feedback from hiring users.
+- Job Posting: Hiring users can post jobs with related assignments.
+- Assignment Download: Candidates can download assignments.
+- Assignment Submission: Candidates can upload completed assignments.
+- Evaluation & Feedback: Hiring users can evaluate assignments and provide feedback.
+
 1.3 Definitions, Acronyms, and Abbreviations
-Hiring User: A user who posts job listings and assignments.
-Candidate: A user who applies for jobs and completes assignments.
-Assignment: A task or project provided by the hiring user to evaluate candidates.
-Feedback: A review or evaluation given by the hiring user based on the submitted assignment.
-2. Overall Description
+--------------------------------------------
+- Hiring User: A user who posts job listings and assignments.
+- Candidate: A user who applies for jobs and completes assignments.
+- Assignment: A task or project provided by the hiring user to evaluate candidates.
+- Feedback: A review or evaluation given by the hiring user based on the submitted assignment.
+
+==============================================================
+
+2. OVERALL DESCRIPTION
+======================
+
 2.1 Product Perspective
-The Hiring Platform will consist of a web application accessible by both candidates and hiring users. It will allow hiring users to post job listings, share assignments, and evaluate submissions from candidates. The candidate users can browse the posted jobs, download assignments, complete them, and submit their results.
+-----------------------
+The Hiring Platform will be a web application accessible by both candidates and hiring users. It will allow hiring users to post job listings, share assignments, and evaluate submissions from candidates. Candidates can browse job listings, download assignments, complete them, and submit their results.
 
 2.2 Product Features
-User Registration and Login:
+--------------------
 
-Hiring users and candidates will register and log in via the platform.
-Users can authenticate using email/password or third-party login (Google, GitHub).
-Job and Assignment Posting (for Hiring Users):
+User Registration and Login
+- Both hiring users and candidates can register and log in.
+- Users can authenticate using email/password or third-party login (Google, GitHub).
 
-Hiring users can post job listings along with assignment details.
-Each assignment will have a downloadable file or document attached, which candidates can access.
-Job and Assignment Browsing (for Candidates):
+Job and Assignment Posting (for Hiring Users)
+- Hiring users can post job listings with assignment details.
+- Each assignment will include a downloadable file or document.
 
-Candidates can browse the job listings, filter by category, location, or other job attributes.
-Upon selecting a job, candidates will have the option to view and download the related assignment.
-Assignment Submission:
+Job and Assignment Browsing (for Candidates)
+- Candidates can browse and filter job listings by category, location, and other attributes.
+- Candidates can view job details and download assignments.
 
-After completing the assignment, candidates can upload their solution in various formats (PDF, Word, Drive, GitHub, Figma, etc.).
-Candidates can provide a link to an external resource if preferred.
-Assignment Evaluation:
+Assignment Submission
+- Candidates can upload completed assignments in various formats (PDF, Word, Google Drive, GitHub, Figma, etc.).
+- Option to submit a link to an external resource.
 
-Hiring users will review and evaluate the submitted assignments.
-The platform will allow the hiring user to leave comments, provide a rating, and give feedback.
-Feedback Delivery:
+Assignment Evaluation
+- Hiring users review and evaluate submissions.
+- They can leave comments, provide a rating, and give feedback.
 
-Candidates will be notified of the feedback from the hiring user, which could include:
-An acceptance/rejection decision.
-Constructive feedback on the assignment.
-Suggestions for improvement.
-3. System Features
+Feedback Delivery
+- Candidates are notified of feedback, which may include:
+  - An acceptance/rejection decision.
+  - Constructive feedback and improvement suggestions.
+
+==============================================================
+
+3. SYSTEM FEATURES
+==================
+
 3.1 User Management
-Registration & Login: Users must create an account or log in.
-Required Information: Name, email, password, role (Hiring User/Candidate).
+-------------------
+- Registration & Login: Users create an account or log in.
+- Required Information: Name, email, password, and role (Hiring User/Candidate).
+
 3.2 Job Posting
-Job Creation: Hiring users can create new job listings with a title, description, qualifications, and required assignment.
-Assignment Upload: Hiring users can upload the assignment file to accompany the job listing.
+---------------
+- Job Creation: Hiring users create job listings with title, description, qualifications, and assignment.
+- Assignment Upload: Hiring users attach assignment files to job listings.
+
 3.3 Assignment Download
-Assignment Access: Candidates can click on the job title and see the assignment details and download the attached file.
+-----------------------
+- Assignment Access: Candidates can view and download assignment details.
+
 3.4 Assignment Submission
-File Upload: Candidates will upload their completed assignment in various file formats (PDF, DOCX, image files, etc.).
-Link Submission: Candidates can also submit a link to an external platform (e.g., Google Drive, GitHub, Figma).
+-------------------------
+- File Upload: Candidates can upload completed assignments in various formats (PDF, DOCX, image files, etc.).
+- Link Submission: Option to submit external platform links (e.g., Google Drive, GitHub, Figma).
+
 3.5 Evaluation and Feedback
-Evaluation by Hiring User: After submission, the hiring user can view the assignment, assess the quality of work, and provide feedback.
-Feedback Types:
-Positive: Candidate passed the assignment.
-Negative: Candidate did not pass; detailed feedback will be given.
-Suggestions: Areas for improvement.
-4. External Interface Requirements
+---------------------------
+- Evaluation by Hiring User: Hiring users assess assignment quality and provide feedback.
+- Feedback Types:
+  - Positive: Candidate passed the assignment.
+  - Negative: Candidate did not pass; feedback provided.
+  - Suggestions: Areas for improvement.
+
+==============================================================
+
+4. EXTERNAL INTERFACE REQUIREMENTS
+==================================
+
 4.1 User Interfaces
-Homepage: Displays options for hiring users and candidates to register or log in.
-Dashboard:
-Hiring User: Can post jobs, view applications, and provide feedback.
-Candidate: Can browse jobs, download assignments, and upload completed tasks.
-Job Listings Page: Allows candidates to search and filter job postings.
-Assignment Details Page: Displays assignment file and instructions for the candidate.
+-------------------
+- Homepage: Options for hiring users and candidates to register or log in.
+- Dashboard:
+  - Hiring User: Post jobs, view applications, and give feedback.
+  - Candidate: Browse jobs, download assignments, and submit tasks.
+- Job Listings Page: Search and filter job postings.
+- Assignment Details Page: Displays assignment file and instructions.
+
 4.2 Hardware Interfaces
-The platform will be accessible from desktop and mobile devices. No specific hardware interface is required beyond the user’s web browser.
+-----------------------
+- Accessible from desktop and mobile devices; no special hardware required beyond a web browser.
+
 4.3 Software Interfaces
-The platform will integrate with external services like Google Drive, GitHub, and Figma for file uploads and external links.
-5. System Requirements
+-----------------------
+- Integration with external services like Google Drive, GitHub, and Figma for file uploads and links.
+
+==============================================================
+
+5. SYSTEM REQUIREMENTS
+======================
+
 5.1 Functional Requirements
-Job Posting: Allow hiring users to create job posts with assignments.
-Job Browsing: Enable candidates to browse and search jobs.
-Assignment Download/Upload: Candidates should be able to download and submit assignments.
-Evaluation & Feedback: Provide functionality for hiring users to review and leave feedback for assignments.
-Notifications: Candidates should receive notifications when their assignment is evaluated.
+---------------------------
+- Job Posting: Hiring users can create job posts with assignments.
+- Job Browsing: Candidates can browse and search jobs.
+- Assignment Download/Upload: Candidates can download and submit assignments.
+- Evaluation & Feedback: Hiring users can review and give feedback on assignments.
+- Notifications: Candidates receive notifications on evaluation status.
+
 5.2 Non-Functional Requirements
-Usability: The platform must be user-friendly and intuitive for both hiring users and candidates.
-Performance: The system should be able to handle simultaneous requests from multiple users.
-Security: Implement secure authentication and data encryption.
-Scalability: The platform should be scalable to accommodate an increasing number of users.
-Availability: The system should be available 99% of the time.
-6. System Architecture
+-------------------------------
+- Usability: User-friendly for both hiring users and candidates.
+- Performance: Supports simultaneous user requests.
+- Security: Secure authentication and data encryption.
+- Scalability: Accommodates growing user base.
+- Availability: 99% system uptime.
+
+==============================================================
+
+6. SYSTEM ARCHITECTURE
+======================
+
 The platform will follow a Client-Server Architecture:
 
-Frontend: React.js will be used to build the user interface.
-Backend: Node.js with Express will manage business logic and database interactions.
-Database: MongoDB will be used for storing user data, job postings, assignments, and feedback.
-Cloud Storage: External links for file uploads will be supported (e.g., Google Drive, GitHub, Figma).
-7. Appendix
-References: No additional external documents are required at this time.
-Glossary: Further definitions of specific terms used in this document.
+- Frontend: Built with React.js for the user interface.
+- Backend: Node.js with Express for business logic and database management.
+- Database: MongoDB for storing user data, job listings, assignments, and feedback.
+- Cloud Storage: Supports external links for file uploads (e.g., Google Drive, GitHub, Figma).
+
+==============================================================
+
+7. APPENDIX
+===========
+
+- References: No additional external documents required at this time.
+- Glossary: Definitions of specific terms used in this document.
+
+==============================================================

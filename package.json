@@ -1,5 +1,5 @@
 {
-  "name": "next-boilerplate",
+  "name": "swissmote-hiring-platform",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,8 @@
     "next": "15.0.2",
     "next-boilerplate": "file:",
     "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028"
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "swissmote-hiring-platform": "file:"
   },
   "devDependencies": {
     "eslint": "^8",
