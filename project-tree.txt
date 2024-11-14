@@ -1,0 +1,57 @@
+PROJECT: Swissmote (Hiring Platform)
+
+Techs: Next.js | React | Javascript | Tailwind CSS | MongoDB/Mongoose
+
+swissmote/
+├── public/                     # Static assets (images, icons, etc.)
+│   ├── images/                 # Profile pictures, logos, etc.
+│   └── favicon.ico             # Favicon for the website
+├── src/
+│   ├── components/             # Reusable components
+│   │   ├── Navbar.js           # Navigation bar component
+│   │   ├── JobCard.js          # Displays individual job posting
+│   │   ├── AssignmentCard.js   # Displays assignment details
+│   │   ├── FileUpload.js       # Component for file upload
+│   │   ├── FeedbackForm.js     # Component for submitting feedback
+│   │   └── JobForm.js          # Form for posting new job
+│   ├── pages/                  # Next.js pages (using page router)
+│   │   ├── _app.js             # Custom App component
+│   │   ├── _document.js        # Custom Document component (for meta tags, etc.)
+│   │   ├── index.js            # Home page
+│   │   ├── job/                # Job-related pages
+│   │   │   ├── [id].js         # Job detail page (dynamic route based on job id)
+│   │   │   └── apply.js        # Apply for job page (assignment download and upload)
+│   │   ├── login.js            # Login page
+│   │   ├── register.js         # Register page
+│   │   ├── dashboard.js        # Dashboard for hiring users (manage jobs)
+│   │   ├── profile.js          # User profile page (view/edit)
+│   │   ├── feedback.js         # Feedback submission page
+│   │   └──404.js              # 404 Error page
+│   ├── context/                # Context API for state management (global state)
+│   │   └── UserContext.js      # Context for user authentication and details
+│   ├── lib/                    # Utilities and helper functions
+│   │   ├── db.js               # MongoDB connection logic
+│   │   ├── auth.js             # Authentication functions (OAuth, JWT)
+│   │   └── api.js              # Helper functions for handling API requests
+│   ├── models/                 # MongoDB models
+│   │   ├── User.js             # User model (candidates, hiring users)
+│   │   ├── Job.js              # Job model (job listings)
+│   │   ├── Assignment.js       # Assignment model (assignment data)
+│   │   └── Feedback.js         # Feedback model (feedback given to candidates)
+│   ├── styles/                 # Tailwind CSS configurations and global styles
+│   │   ├── globals.css         # Global styles (for base layout, typography, etc.)
+│   │   └── tailwind.config.js  # Tailwind CSS configuration
+│   ├── utils/                  # Utility functions (e.g., date formatting, validation)
+│   │   ├── validate.js         # Functions for input validation (email, file types)
+│   │   └── dateFormat.js       # Helper function for formatting dates
+│   └── hooks/                  # Custom React hooks
+│       ├── useAuth.js          # Hook for authentication logic
+│       ├── useJobs.js          # Hook for managing jobs (fetching, filtering)
+│       └── useFeedback.js      # Hook for handling feedback
+├── .env.local                  # Environment variables (DB connection string, API keys)
+├── .gitignore                  # Git ignore file (e.g., node_modules, build folder)
+├── package.json                # Project dependencies and scripts
+├── next.config.js              # Next.js configuration
+├── tailwind.config.js          # Tailwind configuration file
+├── postcss.config.js           # PostCSS configuration (required by Tailwind)
+└── README.md                   # Project overview and setup instructions
