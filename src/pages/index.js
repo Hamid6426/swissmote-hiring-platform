@@ -1,40 +1,20 @@
-// pages/index.js
-import Image from "next/image";
-import GetStarted from "../components/Common/GetStarted";
-import Header from "../components/Common/Header";
+import LandingNavbar from "@/components/Landing/LandingNavbar";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div
-      className="bg-dark2 text-dark text-black text-whites min-vh-100 w-100 d-flex flex-row align-items-center justify-content-center position-relative"
-      style={{ background: "#ddd" }}
-    >
-      <Header />
-      <div className="d-flex flex-row justify-content-center align-items-center w-100 pt-5 gap-5">
-        <div className="d-flex flex-column justify-content-center align-items-center">
-          <div className="d-flex flex-column justify-content-center align-items-start text-weight-bold">
-            <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>Welcome to</h1>
-            <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>School</h1>
-            <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>Management</h1>
-            <h1
-              style={{ fontSize: "2rem", fontWeight: "bold" }}
-              className="mb-4"
-            >
-              System
-            </h1>
-            <GetStarted />
-          </div>
-        </div>
-
-        <div className="d-md-flex flex-column justify-content-center align-items-center d-none">
-          <Image
-            src="/hero-image.svg"
-            width="400"
-            height="400"
-            alt="Hero image"
-            className="d-flex"
-          />
-        </div>
+    <div className="bg-white min-w-full min-h-svh flex justify-center items-center">
+      <LandingNavbar />
+      <div className="flex flex-col justify-center items-center gap-8">
+        <div className="font-bold text-4xl">Tired of Rejections?</div>
+        <div className="font-bold text-4xl">Get hired based on your SKILLS</div>
+        <div className="font-bold text-4xl">rather than your RESUME</div>
+        <Link
+          href="/auth/signup"
+          className="rounded-xl px-10 py-4 text-2xl bg-indigo-800 text-white font-medium hover:bg-blue-700 hover:text-white"
+        >
+          START YOUR JOURNEY HERE
+        </Link>
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import Header from '@/components/Header';
+import React, { useState } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import AuthSection from "@/components/Auth/AuthSection";
 
 const ForgotPassword = () => {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -17,9 +18,9 @@ const ForgotPassword = () => {
 
     setIsLoading(true); // Set loading state
 
-    const response = await fetch('/api/forgot-password', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const response = await fetch("/api/auth/forgot-password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
     });
 
@@ -27,49 +28,65 @@ const ForgotPassword = () => {
     setIsLoading(false); // Reset loading state
 
     if (response.ok) {
-      setMessage('Password reset email sent successfully. Please check your inbox.');
+      setMessage(
+        "Password reset email sent successfully. Please check your inbox."
+      );
     } else {
-      setMessage(data.message || 'Something went wrong. Please try again.');
+      setMessage(data.message || "Something went wrong. Please try again.");
     }
   }
 
   return (
-    <div className="bg-dark2 text-dark min-vh-100 w-100 d-flex flex-column align-items-center justify-content-center" style={{ backgroundColor: "#ddd" }}>
-      <Header/>
-      <h2 className="mb-4 text-center">Forgot Password</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="container w-100 d-flex flex-column justify-content-center">
-
-          <div className="w-100 mb-3" style={{ minWidth: "312px" }}>
-            <label htmlFor="email" className="form-label">Email</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="container w-100 d-flex justify-content-center">
+    <div className="w-full flex flex-row min-h-dvh">
+      <AuthSection/>
+      <div className="w-7/12 min-h-screen flex flex-col items-center justify-center">
+        <h2 className="text-xl font-bold mb-6 text-center">Forgot Password</h2>
+        <form onSubmit={handleSubmit} className="w-full max-w-sm">
+          <div className="flex flex-col gap-4">
+            {/* Email Input */}
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              />
+            </div>
+            {/* Submit Button */}
             <button
               type="submit"
-              className="mt-2 mb-3 btn btn-primary text-center"
-              style={{ minWidth: "312px" }}
-              disabled={isLoading} // Disable button while loading
+              className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 disabled:opacity-50"
+              disabled={isLoading}
             >
-              {isLoading ? 'Sending...' : 'Send Reset Link'}
+              {isLoading ? "Sending..." : "Send Reset Link"}
             </button>
           </div>
-        </div>
-      </form>
-      {message && (
-        <div className="alert mt-3" role="alert">
-          {message}
-        </div>
-      )}
+          <div className="flex flex-row justify-center items-center gap-2 mt-4">
+            <div className="">Recalled something?</div>
+            <Link href="/auth/signin" className="text-sm text-blue-500 hover:underline mt-1 font-bold" >Try again</Link>
+            </div>
+        </form>
+
+        {/* Message Alert */}
+        {message && (
+          <div
+            className={`mt-4 px-4 py-2 text-sm rounded ${
+              response?.ok
+                ? "bg-green-100 text-green-700"
+                : "bg-red-100 text-red-700"
+            }`}
+            role="alert"
+          >
+            {message}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

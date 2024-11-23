@@ -1,13 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
+.whitespace-pre-wrap {
+  white-space: pre-wrap; /* Preserves line breaks */
+  word-wrap: break-word; /* Prevents words from overflowing */
 }
 
-.dark .dropdown-item .dropdown-menu .dropdown {
-  background-color: #fff !important;
+.pre-wrap {
+  white-space: pre-wrap; /* Preserves line breaks */
 }

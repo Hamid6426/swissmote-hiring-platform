@@ -14,7 +14,7 @@ if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
 }
 
-async function connectToDatabase() {
+async function connectDB() {
   // If there's an active connection, reuse it
   if (cached.conn) {
     console.log('Using cached MongoDB connection');
@@ -48,4 +48,4 @@ async function connectToDatabase() {
   }
 }
 
-export default connectToDatabase;
+export default connectDB;

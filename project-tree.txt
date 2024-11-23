@@ -70,8 +70,8 @@ Techs: Next.js | React | Javascript | Tailwind CSS | MongoDB/Mongoose
 │   │   ├── auth/                   # Authentication pages
 │   │   │   ├── login.js
 │   │   │   └── register.js
-│   │   ├── hr/                     # HR-specific pages
-│   │   │   ├── dashboard.js        # Main HR dashboard
+│   │   ├── human-resource/         # HR-specific pages
+│   │   │   ├── index.js            # Main HR dashboard
 │   │   │   ├── jobs/               # HR job posting and management
 │   │   │   │   ├── index.js        # List jobs created by HR
 │   │   │   │   └── [id].js         # Job details and management
@@ -79,14 +79,14 @@ Techs: Next.js | React | Javascript | Tailwind CSS | MongoDB/Mongoose
 │   │   │       ├── index.js        # List of candidates for HR
 │   │   │       └── [id].js         # Candidate details and feedback
 │   │   ├── job-seeker/             # Job Seeker-specific pages
-│   │   │   ├── dashboard.js        # Main Job Seeker dashboard
+│   │   │   ├── index.js            # Main Job Seeker dashboard
 │   │   │   ├── jobs/               # Job browsing and applications
 │   │   │   │   ├── index.js        # List all jobs available
 │   │   │   │   └── [id].js         # Job details and apply
 │   │   │   └── applications/       # Manage Job Seeker applications
 │   │   │       └── [id].js         # View specific application status
 │   │   ├── admin/                  # Admin-specific pages
-│   │   │   ├── dashboard.js        # Admin dashboard for overview
+│   │   │   ├── index.js            # Admin dashboard for overview
 │   │   │   └── users/              # Manage platform users
 │   │   │       ├── index.js        # List all users (HRs and Job Seekers)
 │   │   │       └── [id].js         # User details and management
