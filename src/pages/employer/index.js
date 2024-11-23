@@ -10,31 +10,37 @@ import AnnouncementTeaser from "../../components/Employer/AnnoucementTeaser";
 import MessagesTeaser from "../../components/Employer/MessagesTeaser";
 
 export async function getServerSideProps(context) {
-  const token = context.req.cookies.token || "";
-  const decodedToken = verifyToken(token);
+  try {
+    // await connectDB();
+    const token = context.req.cookies.token || "";
+    const decodedToken = verifyToken(token);
 
-  if (!decodedToken || decodedToken.role !== "Employer") {
+    if (!decodedToken || decodedToken.role !== "Candidate") {
+      return {
+        redirect: { destination: "/auth/signin", permanent: false },
+      };
+    }
+
+    const user = await User.findById(decodedToken.userId).select("fullName role").lean();
+    if (!user) {
+      return {
+        redirect: { destination: "/auth/signin", permanent: false },
+      };
+    }
+
     return {
-      redirect: {
-        destination: "/auth/signin",
-        permanent: false,
+      props: {
+        userData: { fullName: user.fullName, role: user.role },
       },
     };
+  } catch (error) {
+    console.error("Error in getServerSideProps:", error);
+    return {
+      notFound: true,
+    };
   }
-
-  // Fetch user data from the database
-  const user = await User.findById(decodedToken.userId).select("fullName role");
-
-  // To welcome the user
-  return {
-    props: {
-      userData: {
-        fullName: user.fullName,
-        role: user.role,
-      },
-    },
-  };
 }
+
 export default function EmployerDashboard({ userData }) {
   return (
     <div>

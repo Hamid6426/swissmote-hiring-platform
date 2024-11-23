@@ -47,7 +47,9 @@ export default async function handler(req, res) {
     );
 
     // Set token as an HttpOnly cookie
-    res.setHeader('Set-Cookie', `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict`);
+    // res.setHeader('Set-Cookie', `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict`);
+    res.setHeader('Set-Cookie', `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=3600`);
+
 
     // Send response with token and user role
     return res.status(200).json({ token, role: user.role });
