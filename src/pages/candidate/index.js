@@ -1,7 +1,5 @@
 import verifyToken from "@/utils/verifyToken";
 import User from "@/models/User"; // Adjust the path as needed
-import Link from "next/link";
-import CandidateNavbar from "@/components/Candidate/CandidateNavbar";
 
 export async function getServerSideProps(context) {
   const token = context.req.cookies.token || "";
