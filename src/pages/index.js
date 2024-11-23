@@ -1,4 +1,4 @@
-import LandingNavbar from "@/components/Landing/LandingNavbar";
+import LandingNavbar from "@/components/Others/LandingNavbar";
 import Link from "next/link";
 
 export default function Home() {

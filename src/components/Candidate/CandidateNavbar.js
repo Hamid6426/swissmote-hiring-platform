@@ -6,12 +6,12 @@ import {
   MdChat,
   MdCampaign,
   MdNotifications,
-  MdDarkMode,
 } from "react-icons/md";
+import ThemeToggle from "../Others/ThemeToggle";
 
 export default function CandidateNavbar() {
   return (
-    <div className="h-20 w-full flex flex-row justify-between items-center pr-1 drop-shadow-lg">
+    <div className="h-20 w-full flex flex-row justify-between items-center pr-1 drop-shadow-lg dark:bg-gray-950">
       <Image
         src="/swissmote-logo.svg"
         alt="profile picture"
@@ -19,9 +19,7 @@ export default function CandidateNavbar() {
         height={40}
       />
       <div className="flex flex-row items-center gap-8">
-        <button>
-          <MdDarkMode className="w-8 h-8" />
-        </button>
+        <ThemeToggle/>
         <Link href="#">
           <MdCampaign className="w-8 h-8" />
         </Link>
