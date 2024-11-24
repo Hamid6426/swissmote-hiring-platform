@@ -9,8 +9,8 @@ import {
   MdMenu,
   MdClose,
 } from "react-icons/md";
-import ThemeToggleTwo from "../Others/ThemeToggletwo";
-import ThemeToggle from "../Others/ThemeToggle";
+import ThemeToggleTwo from "@/components/Others/ThemeToggletwo";
+import ThemeToggle from "@/components/Others/ThemeToggle";
 
 export default function CandidateNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
