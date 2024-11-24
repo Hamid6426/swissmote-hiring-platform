@@ -9,7 +9,7 @@ import {
   MdMenu,
   MdClose,
 } from "react-icons/md";
-import ThemeToggleTwo from "@/components/Others/ThemeToggletwo";
+import ThemeToggleTwo from "@/components/Others/ThemeToggleTwo";
 import ThemeToggle from "@/components/Others/ThemeToggle";
 
 export default function EmployerNavbar() {
