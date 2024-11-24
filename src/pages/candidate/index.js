@@ -1,4 +1,5 @@
 import verifyToken from "@/backend/utils/verifyToken";
+import connectDB from "@/backend/config/mongodb";
 import User from "@/backend/models/User"; // Adjust the path as needed
 import SuccessMeter from "@/components/Candidate/SuccessMeter";
 import CandidateInfoTeaser from "@/components/Candidate/CandidateInfoTeaser";
@@ -10,7 +11,7 @@ import LatestNotifications from "@/components/Candidate/LatestNotifications";
 
 export async function getServerSideProps(context) {
   try {
-    // await connectDB();
+    await connectDB();
     const token = context.req.cookies.token || "";
     const decodedToken = verifyToken(token);
 
@@ -21,8 +22,7 @@ export async function getServerSideProps(context) {
     }
 
     const user = await User.findById(decodedToken.userId)
-      .select("fullName role")
-      .lean();
+      .select("fullName role");
 
     if (!user) {
       return {
