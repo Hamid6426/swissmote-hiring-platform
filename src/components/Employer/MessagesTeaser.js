@@ -14,6 +14,12 @@ export default function MessagesTeaser() {
       text: "Looking forward to the meeting.",
       date: "Nov 20, 2024",
     },
+    {
+      id: 3,
+      sender: "Jacky Chan",
+      text: "Looking forward to the meeting.",
+      date: "Nov 20, 2024",
+    },
   ];
 
   return (
