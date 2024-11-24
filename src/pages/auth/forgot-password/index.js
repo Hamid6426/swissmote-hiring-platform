@@ -37,8 +37,8 @@ const ForgotPassword = () => {
   }
 
   return (
-    <div className="w-full flex flex-row min-h-dvh">
-      <AuthSection/>
+    <div className="w-full flex flex-row min-h-dvh dark:bg-neutral-800 dark:text-white">
+      <AuthSection />
       <div className="w-7/12 min-h-screen flex flex-col items-center justify-center">
         <h2 className="text-xl font-bold mb-6 text-center">Forgot Password</h2>
         <form onSubmit={handleSubmit} className="w-full max-w-sm">
@@ -61,7 +61,7 @@ const ForgotPassword = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 disabled:opacity-50"
+              className="w-full bg-indigo-600 text-white py-2 rounded font-bold hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 disabled:opacity-50"
               disabled={isLoading}
             >
               {isLoading ? "Sending..." : "Send Reset Link"}
@@ -69,8 +69,13 @@ const ForgotPassword = () => {
           </div>
           <div className="flex flex-row justify-center items-center gap-2 mt-4">
             <div className="">Recalled something?</div>
-            <Link href="/auth/signin" className="text-sm text-blue-500 hover:underline mt-1 font-bold" >Try again</Link>
-            </div>
+            <Link
+              href="/auth/signin"
+              className="text-sm text-blue-500 hover:underline mt-1 font-bold"
+            >
+              Try again
+            </Link>
+          </div>
         </form>
 
         {/* Message Alert */}

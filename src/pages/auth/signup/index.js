@@ -39,10 +39,10 @@ export default function Signup() {
   };
 
   return (
-    <div className="w-full flex flex-row min-h-dvh">
+    <div className="w-full flex flex-row min-h-dvh dark:bg-neutral-800">
       <AuthSection />
       <div className="w-7/12 min-h-screen flex flex-col items-center justify-center">
-        <h2 className="text-xl font-bold mb-6">Sign Up</h2>
+        <h2 className="text-xl font-bold mb-6 dark:text-white">Sign Up</h2>
       {error && <div className="text-red-500 mb-4">{error}</div>}
 
         <form onSubmit={handleSubmit} className="w-full max-w-sm">
@@ -51,7 +51,7 @@ export default function Signup() {
             <div>
               <label
                 htmlFor="fullName"
-                className="block text-sm font-medium mb-2"
+                className="block text-sm font-medium mb-2 dark:text-white"
               >
                 Full Name
               </label>
@@ -68,7 +68,7 @@ export default function Signup() {
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label htmlFor="email" className="block text-sm font-medium mb-2 dark:text-white">
                 Email address
               </label>
               <input
@@ -86,7 +86,7 @@ export default function Signup() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium mb-2"
+                className="block text-sm font-medium mb-2 dark:text-white"
               >
                 Password
               </label>
@@ -103,7 +103,7 @@ export default function Signup() {
 
             {/* Role Field */}
             <div>
-              <label htmlFor="role" className="block text-sm font-medium mb-2">
+              <label htmlFor="role" className="block text-sm font-medium mb-2 dark:text-white">
                 Role
               </label>
               <select
@@ -112,7 +112,7 @@ export default function Signup() {
                 value={formData.role}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-blue-300"
+                className="dark:text-black w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-blue-300"
               >
                 <option value="" disabled>
                   Select your role
@@ -137,7 +137,7 @@ export default function Signup() {
         </form>
 
         {/* Login Link */}
-        <div className="mt-4 text-sm">
+        <div className="mt-4 text-sm dark:text-white">
           Already have an account?{" "}
           <Link
             href="/auth/signin"

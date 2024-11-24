@@ -52,15 +52,15 @@ const Signin = () => {
   }
 
   return (
-    <div className="w-full flex flex-row min-h-dvh">
+    <div className="w-full flex flex-row min-h-dvh dark:bg-neutral-800 ">
       <AuthSection />
       <div className="w-7/12 min-h-screen flex flex-col items-center justify-center">
-        <h2 className="text-xl font-bold mb-6">Login</h2>
+        <h2 className="text-xl font-bold mb-6 dark:text-white">Login</h2>
         <form onSubmit={handleSubmit} className="w-full max-w-sm">
           <div className="flex flex-col gap-4">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label htmlFor="email" className="dark:text-white block text-sm font-medium mb-2">
                 Email
               </label>
               <input
@@ -78,7 +78,7 @@ const Signin = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium mb-2"
+                className="dark:text-white block text-sm font-medium mb-2"
               >
                 Password
               </label>
@@ -115,7 +115,7 @@ const Signin = () => {
         </form>
 
         {/* Register Link */}
-        <div className="mt-4 text-sm">
+        <div className="mt-4 text-sm dark:text-white">
           Don&apos;t have an account yet?{" "}
           <Link
             className="font-bold text-blue-500 hover:underline"

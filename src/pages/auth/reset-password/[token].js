@@ -65,7 +65,7 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="w-full flex flex-row min-h-dvh">
+        <div className="w-full flex flex-row min-h-dvh dark:bg-neutral-800 dark:text-white">
         <AuthSection/>
         <div className="w-7/12 min-h-screen flex flex-col items-center justify-center">
             <h2 className="text-xl font-bold mb-6 text-center">Reset Your Password</h2>
@@ -106,7 +106,7 @@ const ResetPassword = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 disabled:opacity-50"
+                        className="w-full bg-indigo-600 text-white py-2 rounded hover:bg-blue-500 font-bold focus:outline-none focus:ring focus:ring-blue-300 disabled:opacity-50"
                         disabled={isLoading}
                     >
                         {isLoading ? 'Resetting...' : 'Reset Password'}

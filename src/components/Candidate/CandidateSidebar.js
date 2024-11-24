@@ -5,42 +5,76 @@ import {
   MdDashboard,
   MdWork,
   MdCalendarToday,
-  MdMessage,
+  MdCampaign,
   MdAssignment,
   MdPerson,
+  MdSend,
+  MdNotifications,
+  MdMessage,
 } from "react-icons/md";
 
 export default function CandidateSidebar() {
   const navItems = [
-    { name: "Dashboard", path: "/candidate", icon: <MdDashboard /> },
-    { name: "Job Listings", path: "/candidate/search-job", icon: <MdWork /> },
+    {
+      name: "Dashboard",
+      path: "/candidate",
+      icon: <MdDashboard className="w-6 h-6" />,
+    },
+    {
+      name: "Find Jobs",
+      path: "/candidate/find-jobs",
+      icon: <MdWork className="w-6 h-6" />,
+    },
     {
       name: "Applications",
       path: "/candidate/applications",
-      icon: <MdAssignment />,
+      icon: <MdAssignment className="w-6 h-6" />,
+    },
+    {
+      name: "Submissions",
+      path: "/candidate/submissions",
+      icon: <MdSend className="w-6 h-6" />,
     },
     {
       name: "Interviews",
       path: "/candidate/interviews",
-      icon: <MdCalendarToday />,
+      icon: <MdCalendarToday className="w-6 h-6" />,
     },
-    { name: "Messages", path: "/candidate/messages", icon: <MdMessage /> },
-    { name: "Profile", path: "/candidate/profile", icon: <MdPerson /> },
+    {
+      name: "Announcements",
+      path: "/candidate/announcements",
+      icon: <MdCampaign className="w-6 h-6" />,
+    },
+    {
+      name: "Notifications",
+      path: "/candidate/notifications",
+      icon: <MdNotifications className="w-6 h-6" />, // New button
+    },
+    {
+      name: "Messages",
+      path: "/candidate/messages",
+      icon: <MdMessage className="w-6 h-6" />, // New button
+    },
+    {
+      name: "Profile",
+      path: "/candidate/profile",
+      icon: <MdPerson className="w-6 h-6" />,
+    },
   ];
 
   const router = useRouter(); // Get the current route
 
   return (
-    <div className="text-black md:min-w-60 flex flex-col md:py-6 md:bg-green-100 rounded-xl md:mr-5">
-      <nav className="flex flex-col justify-center items-start w-full pr-4 md:px-4 gap-y-4">
+    <div className="text-black md:min-w-52 flex flex-col dark:text-white rounded-xl">
+      <nav className="flex flex-col justify-center items-start w-full pr-4 gap-y-4">
         {navItems.map((navItem, index) => (
           <Link
             key={index}
             href={navItem.path}
-            className={` px-3 py-3 transition w-full rounded-full ${
+            className={` px-3 py-3 transition w-full rounded-xl md:rounded-full  ${
               router.pathname === navItem.path
                 ? "bg-green-600 text-white font-bold"
-                : "hover:bg-green-400 hover:text-white font-medium bg-green-200"
+                : "hover:bg-green-600 hover:text-white font-medium bg-green-300 text-black"
             }`}
           >
             <div className="flex flex-row md:gap-3 items-center">
