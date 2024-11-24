@@ -1,5 +1,5 @@
-import connectDB from "@/lib/mongodb";
-import JobListing from "@/models/JobListing";
+import connectDB from "@/backend/config/mongodb";
+import JobListing from "@/backend/models/JobListing";
 
 export default async function handler(req, res) {
 

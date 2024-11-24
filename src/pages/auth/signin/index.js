@@ -5,6 +5,8 @@ import AuthSection from "@/components/Auth/AuthSection";
 
 const Signin = () => {
   const router = useRouter();
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -16,6 +18,7 @@ const Signin = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     const { email, password } = formData;
 
@@ -43,6 +46,8 @@ const Signin = () => {
       }
     } else {
       alert("Login failed. Please check your credentials.");
+      setIsLoading(false);
+
     }
   }
 
@@ -100,9 +105,12 @@ const Signin = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+            disabled={isLoading}
+            className={`mt-4 w-full py-2 rounded font-bold hover:bg-blue-500 ${
+              isLoading ? "bg-gray-400" : "bg-indigo-600"
+            } text-white`}
           >
-            Login
+            {isLoading ? "Signing in..." : "Login"}
           </button>
         </form>
 

@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function CompanyInfoTeaser() {
   return (
-    <div className="p-4 flex flex-col justify-start items-start col-span-6 h-48 rounded-xl shadow-md bg-gradient-to-r from-blue-500 to-blue-400 text-white">
+    <div className="p-4 flex flex-col justify-start items-start col-span-6 h-auto lg:h-52 rounded-xl shadow-md bg-gradient-to-r from-blue-500 to-blue-400 text-white">
   <div className="text-2xl font-bold mb-4 tracking-wide">Persist Ventures</div>
 
   <div className="flex flex-col gap-4">

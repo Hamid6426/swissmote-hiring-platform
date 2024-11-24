@@ -15,12 +15,12 @@ export default function LandingNavbar() {
         />
       </div>
       <div className="flex flex-row justify-center items-center h-16 gap-6">
-        <Link href="/" className="hover:text-blue-400">Home</Link>
-        <Link href="/contact-us" className="hover:text-blue-400">Contact us</Link>
-        <Link href="/about-us" className="hover:text-blue-400">About us</Link>
+        <Link href="/" className="hover:text-blue-500 font-bold">Home</Link>
+        <Link href="/contact-us" className="hover:text-blue-500 font-bold">Contact us</Link>
+        <Link href="/about-us" className="hover:text-blue-500 font-bold">About us</Link>
         <MdDarkMode className="w-8 h-8 hover:text-blue-400" />
-        <Link href="/auth/signup" className="px-4 py-2 bg-indigo-800 text-white font-medium hover:bg-blue-700 hover:text-white rounded-full">Seek Job</Link>
-        <Link href="/auth/signin" className="px-4 py-2 bg-indigo-800 text-white font-medium hover:bg-blue-700 hover:text-white rounded-full">Hire Talent</Link>
+        <Link href="/auth/signup" className="px-4 py-2 bg-indigo-600 text-white font-medium hover:bg-blue-500 hover:text-white rounded-full">Seek Job</Link>
+        <Link href="/auth/signin" className="px-4 py-2 bg-indigo-600 text-white font-medium hover:bg-blue-500 hover:text-white rounded-full">Hire Talent</Link>
       </div>
     </div>
   );

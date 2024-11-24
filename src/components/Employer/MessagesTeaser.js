@@ -17,7 +17,7 @@ export default function MessagesTeaser() {
   ];
 
   return (
-    <div className="p-4 col-span-6 h-auto rounded-xl shadow-md bg-gradient-to-r from-rose-500 to-rose-400 text-white">
+    <div className="p-4 col-span-6 h-auto lg:h-64 rounded-xl shadow-md bg-gradient-to-r from-rose-500 to-rose-400 text-white">
       <div className="text-2xl font-bold mb-4 tracking-wide">
         Recent Messages
       </div>

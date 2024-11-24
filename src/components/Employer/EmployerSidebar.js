@@ -39,21 +39,21 @@ export default function EmployerSidebar() {
   const router = useRouter(); // Get the current route
 
   return (
-    <div className="text-black min-w-60 flex flex-col py-6 bg-blue-100 rounded-xl mr-5" >
-      <nav className="flex flex-col justify-center items-start w-full px-4 gap-y-4">
+    <div className="text-black md:min-w-60 flex flex-col md:py-6 md:bg-blue-100 rounded-xl md:mr-5">
+      <nav className="flex flex-col justify-center items-start w-full pr-4 md:px-4 gap-y-4">
         {navItems.map((navItem, index) => (
           <Link
             key={index}
             href={navItem.path}
-            className={` px-4 py-3 transition w-full rounded-full ${
+            className={` px-3 py-3 transition w-full rounded-full ${
               router.pathname === navItem.path
                 ? "bg-blue-600 text-white font-bold"
                 : "hover:bg-blue-400 hover:text-white font-medium bg-blue-200"
             }`}
           >
-            <div className="flex flex-row gap-3 items-center">
+            <div className="flex flex-row md:gap-3 items-center">
               <span className="text-lg">{navItem.icon}</span>
-              <span>{navItem.name}</span>
+              <span className="hidden md:flex">{navItem.name}</span>
             </div>
           </Link>
         ))}

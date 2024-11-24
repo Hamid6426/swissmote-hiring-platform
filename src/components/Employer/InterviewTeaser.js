@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function InterviewTeaser() {
   return (
-    <div className="p-4 flex flex-col justify-start items-start col-span-6 h-64 rounded-xl shadow-md bg-gradient-to-r from-indigo-500 to-indigo-400 text-white">
+    <div className="p-4 flex flex-col justify-start items-start col-span-6 h-auto lg:h-44 xl:h-64 rounded-xl shadow-md bg-gradient-to-r from-indigo-500 to-indigo-400 text-white">
       <div className="text-2xl font-bold mb-4 tracking-wide">Interviews</div>
 
       <div className="flex flex-col gap-2">

@@ -1,5 +1,5 @@
-import verifyToken from "@/utils/verifyToken";
-import User from "@/models/User"; // Adjust the path as needed
+import verifyToken from "@/backend/utils/verifyToken";
+import User from "@/backend/models/User"; // Adjust the path as needed
 
 export async function getServerSideProps(context) {
   try {
@@ -14,6 +14,7 @@ export async function getServerSideProps(context) {
     }
 
     const user = await User.findById(decodedToken.userId).select("fullName role").lean();
+    
     if (!user) {
       return {
         redirect: { destination: "/auth/signin", permanent: false },

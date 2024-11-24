@@ -1,8 +1,8 @@
 // @/pages/api/auth/signup.js
 
 import bcrypt from "bcryptjs";
-import connectDB from "@/lib/mongodb";
-import User from "@/models/User";
+import connectDB from "@/backend/config/mongodb";
+import User from "@/backend/models/User";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {

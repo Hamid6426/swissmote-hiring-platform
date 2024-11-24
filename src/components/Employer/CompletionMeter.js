@@ -7,11 +7,11 @@ const CompletionMeter = ({ percentage }) => {
   const offset = circumference - (percentage / 100) * circumference; // Offset for the stroke
 
   return (
-    <div className="flex flex-row justify-center items-center px-6 h-48 gap-6">
-      <div className="text-green-600 font-bold ">
-        Assignment
-        <br />
-        Submitted
+    <div className="relative z-0 flex flex-col justify-center items-center px-6 h-52 gap-4">
+      <div>
+      <div className="text-green-600 font-bold text-sm">
+        Assignment Submitted - Candidates Applied
+      </div>
       </div>
       <svg
         width={radius * 2 + strokeWidth}
@@ -53,11 +53,7 @@ const CompletionMeter = ({ percentage }) => {
           {percentage}%
         </text>
       </svg>
-      <div className="text-blue-600 font-bold text-right">
-        Candidate
-        <br />
-        Applied
-      </div>
+     
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import connectDB from "@/lib/mongodb";
-import Applied from "@/models/Applied";
+import connectDB from "@/backend/config/mongodb";
+import Applied from "@/backend/models/Applied";
 
 export default async function handler(req, res) {
   await connectDB();

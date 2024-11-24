@@ -1,8 +1,8 @@
 // pages/api/forgot-password.js
 import nodemailer from "nodemailer"; // Email sending service
 import crypto from "crypto"; // To generate the token
-import connectDB from "@/lib/mongodb";
-import User from "@/models/User";
+import connectDB from "@/backend/config/mongodb";
+import User from "@/backend/models/User";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {

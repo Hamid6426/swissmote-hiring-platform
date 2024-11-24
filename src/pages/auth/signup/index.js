@@ -128,8 +128,8 @@ export default function Signup() {
           <button
             type="submit"
             disabled={isLoading}
-            className={`mt-4 w-full py-2 rounded ${
-              isLoading ? "bg-gray-400" : "bg-blue-500"
+            className={`mt-4 w-full py-2 rounded font-bold hover:bg-blue-500 ${
+              isLoading ? "bg-gray-400" : "bg-indigo-600"
             } text-white`}
           >
             {isLoading ? "Signing Up..." : "Sign Up"}

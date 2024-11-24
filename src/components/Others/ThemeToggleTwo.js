@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 
-export default function ThemeToggle() {
+export default function ThemeToggleTwo() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -24,11 +24,21 @@ export default function ThemeToggle() {
 
   return (
     <button
-      onClick={toggleDarkMode}
-      className="dark:text-gray-200"
-      aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
-    >
-      {isDarkMode ? <MdLightMode size={32} className='hover:text-blue-600 hover:w-9 hover:h-9' /> : <MdDarkMode size={32} className='hover:text-blue-600 hover:w-9 hover:h-9' />}
-    </button>
+  onClick={toggleDarkMode}
+  className="dark:text-gray-200"
+  aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+>
+  {isDarkMode ? (
+    <div className="flex flex-row items-center gap-6 hover:text-blue-600">
+      <MdLightMode size={32} className="" />
+      <span className="font-bold">Change Theme</span>
+    </div>
+  ) : (
+    <div className="flex flex-row items-center gap-6 hover:text-blue-600">
+      <MdDarkMode size={32} className="" />
+      <span className="font-bold">Change Theme</span>
+    </div>
+  )}
+</button>
   );
 }

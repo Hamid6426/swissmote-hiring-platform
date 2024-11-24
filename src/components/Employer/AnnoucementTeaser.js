@@ -7,7 +7,7 @@ export default function AnnouncementTeaser () {
   ];
 
   return (
-    <div className="p-4 col-span-6 h-48 rounded-xl shadow-md bg-gradient-to-r from-green-500 to-green-400 text-white">
+    <div className="p-4 col-span-6 h-auto lg:h-48 rounded-xl shadow-md bg-gradient-to-r from-green-500 to-green-400 text-white">
       <div className="text-2xl font-bold mb-4 tracking-wide">Recent Announcements</div>
 
       <div className="flex flex-col gap-4">
